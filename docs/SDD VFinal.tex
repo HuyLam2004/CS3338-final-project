@@ -1,0 +1,150 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\geometry{margin=1in}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\begin{document}
+
+% Cover Page
+\begin{flushright}
+\Huge \textbf{Software Design Document} \\[2em]
+\color{blue}
+\LARGE Artificial Intelligence and Data\\
+Science for Climate Change Management\\
+with Focus on Drought and Wildfire in California\\[2em]
+\color{black}
+\large Prepared by:\\
+Huy Lam\\
+Lunar Raborn\\
+Brian Gonzalez\\
+Guadalupe Ortiz Nunez\\[1em]
+Version 1.4 approved\\
+NASA \& LA City\\
+05/05/25
+\end{flushright}
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Versions Table (unnumbered section manually added to ToC)
+\section*{Revision History}
+\addcontentsline{toc}{section}{Revision History}
+\begin{longtable}{|c|c|p{3in}|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} \\
+\hline
+1.0 & 2025-04-20 & Initial draft of the SDD document. \\
+\hline
+1.1 & 2025-04-25 & Added system architecture details. \\
+\hline
+1.2 & 2025-04-28 & Revised UI design and added database explanation. \\
+\hline
+1.3 & 2025-04-30 & Updated system requirements and external API integration details. \\
+\hline
+1.4 & 2025-05-05 & Final revisions based on feedback. Added additional features to the UI. \\
+\hline
+\end{longtable}
+\newpage
+
+\section{Introduction}
+\subsection{Purpose}
+The purpose of this document is to describe the design and architecture of the web application for data science and climate change management, particularly focusing on wildfire and drought data in California.
+
+\subsection{Intended Audience and Reading Suggestions}
+\begin{itemize}
+  \item Software Developers and Engineers
+  \item Data Scientists and Researchers
+  \item Environmental Agencies and Stakeholders
+\end{itemize}
+
+\subsection{Product Overview}
+This web application will visualize climate change-related data, such as wildfire and drought patterns in California, utilizing maps created with ArcGIS and real-time data sources from APIs.
+
+\newpage
+\section{System Architecture}
+\subsection{Overview}
+The system is a cloud-based web application that integrates various data sources, including ArcGIS maps, wildfire data from CAL Fire, and drought severity data from NOAA. It utilizes JavaScript, HTML5, and CSS for the frontend, with backend data being fetched dynamically from external APIs.
+
+\subsection{Workflow}
+The system works as follows:
+\begin{itemize}
+  \item Users access the web application via their browser.
+  \item The frontend displays maps and data visualizations.
+  \item API calls are made to retrieve real-time wildfire and drought data.
+  \item The data is displayed in the form of interactive maps and graphs, allowing users to analyze trends and correlations.
+\end{itemize}
+
+\subsection{Site Breakdown}
+\begin{itemize}
+  \item Home Page: Introduction and overview of climate change effects.
+  \item Wildfire Map: A real-time map displaying wildfire locations and severity.
+  \item Drought Map: Interactive visualization showing drought severity levels.
+  \item Data Analysis Dashboard: A section for analyzing data trends over time.
+\end{itemize}
+
+\newpage
+\section{User Interface}
+\subsection{UI Overview}
+The user interface (UI) will be clean, intuitive, and responsive, designed for accessibility on both mobile and desktop devices. It will allow users to navigate between the maps, view real-time data, and interact with various features such as zoom, layer toggles, and data filters.
+
+\subsection{Database Explanation}
+The system does not utilize a traditional database but relies on **real-time data fetched from external APIs**. The data from APIs like NOAA and ArcGIS will be parsed and displayed directly on the frontend.
+
+\subsection{How to Use}
+1. Navigate to the homepage.
+2. View the Wildfire Map to see real-time fire locations.
+3. Toggle between wildfire and drought severity data layers.
+4. Use the Data Analysis Dashboard for trends and historical comparisons.
+
+\newpage
+\section*{Glossary}
+\addcontentsline{toc}{section}{Glossary}
+\begin{longtable}{|p{1.5in}|p{4in}|}
+\hline
+\textbf{Acronym} & \textbf{Definition} \\
+\hline
+API & Application Programming Interface \\
+\hline
+UI & User Interface \\
+\hline
+JS & JavaScript \\
+\hline
+NOAA & National Oceanic and Atmospheric Administration \\
+\hline
+CAL Fire & California Department of Forestry and Fire Protection \\
+\hline
+\end{longtable}
+
+\newpage
+\section*{References}
+\addcontentsline{toc}{section}{References}
+\begin{itemize}
+\item \url{https://www.arcgis.com}
+\item \url{https://www.noaa.gov}
+\item \url{https://www.calfire.ca.gov}
+\item \url{https://supabase.com}
+\item \url{https://gdpr.eu/}
+\item \url{https://oag.ca.gov/privacy/ccpa}
+\item \url{https://www.w3.org/WAI/standards-guidelines/wcag/}
+\end{itemize}
+
+\end{document}

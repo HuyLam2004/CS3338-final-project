@@ -1,0 +1,155 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\geometry{margin=1in}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\begin{document}
+
+% Cover Page
+\begin{flushright}
+\Huge \textbf{Design Specification} \\[2em]
+\color{blue}
+\LARGE Artificial Intelligence and Data\\
+Science for Climate Change Management\\
+with Focus on Drought and Wildfire in California\\[2em]
+\color{black}
+\large Prepared by:\\
+Huy Lam\\
+Lunar Raborn\\
+Brian Gonzalez\\
+Guadalupe Ortiz Nunez\\[1em]
+Version 1.0\\
+NASA \& LA City\\
+05/05/25
+\end{flushright}
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+\section{Overview}
+This document outlines the design specifications of our climate change web platform. It breaks down each page, component, and tool used in the development, including the frontend, backend, data flow, and external integrations.
+
+\section{Page and Component Breakdown}
+
+\subsection{1. Home Page}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Purpose:} Introduces users to the application, its objectives, and main features.
+    \item \textbf{Components:}
+    \begin{itemize}
+        \item Hero banner with title and background image.
+        \item Summary cards linking to Wildfire Map, Drought Map, and Dashboard.
+        \item Navigation bar with branding and menu items.
+    \end{itemize}
+\end{itemize}
+
+\subsection{2. Wildfire Map Page}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Purpose:} Displays real-time wildfire data across California.
+    \item \textbf{Components:}
+    \begin{itemize}
+        \item ArcGIS map embedded with CAL Fire data.
+        \item Legend for fire severity and size.
+        \item Filter panel (date range, severity).
+    \end{itemize}
+\end{itemize}
+
+\subsection{3. Drought Map Page}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Purpose:} Visualizes drought intensity across the state using NOAA data.
+    \item \textbf{Components:}
+    \begin{itemize}
+        \item ArcGIS drought map with interactive layers.
+        \item Time slider to view historical drought patterns.
+        \item Data layer toggle for severity levels.
+    \end{itemize}
+\end{itemize}
+
+\subsection{4. Data Analysis Dashboard}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Purpose:} Allows users to explore trends, patterns, and correlations over time.
+    \item \textbf{Components:}
+    \begin{itemize}
+        \item Line graphs for temperature, fire count, and drought index.
+        \item Bar charts for regional comparisons.
+        \item Dropdowns and date filters.
+    \end{itemize}
+\end{itemize}
+
+\subsection{5. About Page}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Purpose:} Describes the team, project mission, and data sources.
+    \item \textbf{Components:}
+    \begin{itemize}
+        \item Team bios with photos.
+        \item Links to APIs and open data.
+        \item NASA and LA City project description.
+    \end{itemize}
+\end{itemize}
+
+\newpage
+\section{Tools and Technologies}
+
+\subsection{Frontend}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{HTML5/CSS3}: Base structure and layout.
+    \item \textbf{JavaScript (ES6+)}: Client-side interactivity.
+    \item \textbf{ArcGIS JS API}: Maps and spatial data layers.
+    \item \textbf{Chart.js or D3.js}: Data visualization and analytics charts.
+    \item \textbf{Bootstrap 5}: Responsive design and UI components.
+\end{itemize}
+
+\subsection{Backend}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Node.js / Express.js}: API routing and server-side logic (or Django if Python used).
+    \item \textbf{Real-time Fetching}: External API integration instead of traditional databases.
+\end{itemize}
+
+\subsection{External APIs}
+\begin{itemize}[leftmargin=*]
+    \item \href{https://www.ncei.noaa.gov/}{\textbf{NOAA API}}: Drought severity and climate data.
+    \item \href{https://www.fire.ca.gov/incidents/}{\textbf{CAL Fire Data}}: Wildfire incidents and live status.
+    \item \href{https://developers.arcgis.com/javascript/}{\textbf{ArcGIS JS API}}: Interactive map rendering and layers.
+\end{itemize}
+
+\subsection{Hosting and Deployment}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{GitHub Pages / Vercel / Netlify}: Hosting for frontend.
+    \item \href{https://github.com/HuyLam2004/CS3338-final-project}{\textbf{GitHub Repository}}: Source control and team collaboration.
+\end{itemize}
+
+\section{Responsive and Accessibility Design}
+\begin{itemize}[leftmargin=*]
+    \item Mobile-first layout using Bootstrap grid.
+    \item Color contrast optimized for accessibility.
+    \item Semantic HTML and ARIA attributes for screen reader support.
+\end{itemize}
+
+\section{Future Enhancements}
+\begin{itemize}[leftmargin=*]
+    \item User login and saved dashboards.
+    \item Integration with climate prediction models.
+    \item Custom alerts and regional push notifications.
+\end{itemize}
+
+\end{document}

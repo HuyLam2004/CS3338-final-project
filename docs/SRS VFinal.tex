@@ -1,0 +1,159 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\geometry{margin=1in}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\begin{document}
+
+% Cover Page
+\begin{flushright}
+\Huge \textbf{Software Requirements Specification} \\[2em]
+\color{blue}
+\LARGE Artificial Intelligence and Data\\
+Science for Climate Change Management\\
+with Focus on Drought and Wildfire in California\\[2em]
+\color{black}
+\large Prepared by:\\
+Huy Lam\\
+Lunar Raborn\\
+Brian Gonzalez\\
+Guadalupe Ortiz Nunez\\[1em]
+Version 1.4 approved\\
+NASA \& LA City\\
+05/05/25
+\end{flushright}
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Versions Table
+\section*{Revision History}
+\addcontentsline{toc}{section}{Revision History}
+\begin{longtable}{|c|c|p{3in}|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} \\
+\hline
+1.0 & 2025-04-20 & Initial draft of the SRS document. \\
+\hline
+1.1 & 2025-04-25 & Added system requirements for data storage and retrieval. \\
+\hline
+1.2 & 2025-04-28 & Revised API requirements for better integration with external sources. \\
+\hline
+1.3 & 2025-04-30 & Detailed user interface requirements and updated ethical considerations. \\
+\hline
+1.4 & 2025-05-03 & Final revisions based on feedback. Added additional data sources. Refined interface design, added glossary terms, finalized legal/ethical considerations and updated for Snapshot 4. \\
+\hline
+\end{longtable}
+\newpage
+
+\section{Introduction}
+\subsection{Purpose}
+This document provides a detailed specification of the software system for the project \textbf{Data Science for Climate Change Management} with a focus on \textbf{Drought and Wildfire in California}. The purpose of this document is to define the system requirements and how they will be implemented.
+
+\subsection{Intended Audience}
+This document is intended for:
+\begin{itemize}
+\item \textbf{Developers and Engineers}: To build, maintain, and test the system.
+\item \textbf{Stakeholders and Sponsors}: Including NASA, LA City, and academic researchers interested in environmental monitoring.
+\item \textbf{End-Users}: Citizens, scientists, journalists, and government agencies seeking actionable climate data.
+\end{itemize}
+
+\subsection{Product Overview}
+The product is a web application that provides real-time and historical data visualizations regarding drought and wildfire events in California. This includes interactive maps, analytics, and data exploration tools designed for researchers, environmental agencies, and the general public.
+
+\subsection{Document Overview}
+This SRS outlines external interfaces, legal/ethical implications, and technical specifications. It evolves over four development snapshots, reflecting the system's iterative growth.
+\newpage
+\section{External Interface Requirements}
+\subsection{User Interface}
+The web application will have a user-friendly interface allowing users to:
+\begin{itemize}
+\item Interactive map with wildfire and drought overlays.
+\item Time-slider for historical trend analysis.
+\item Data filters: severity, location, date, type.
+\item Real-time alerts panel.
+\item Mobile-friendly, accessible design (WCAG 2.1 compliant).
+\item Admin dashboard for data uploads, user reports, and usage analytics.
+\end{itemize}
+The UI will be responsive and accessible, optimized for both desktop and mobile devices. The application will use  ReactJS, Tailwind CSS, and ArcGIS JS SDK.
+
+\subsection{Software Interfaces}
+The web application will interact with the following external software:
+\begin{itemize}
+\item \textbf{ArcGIS API}: Geospatial mapping.
+\item \textbf{NOAA API}: Weather and climate data.
+\item \textbf{CAL Fire API}: Active wildfire reports.
+\item \textbf{Supabase}: Backend database for historical data storage.
+\item \textbf{OpenAI API (Future Work)}: Natural language queries for datasets.
+\end{itemize}
+
+\subsection{Hardware Interfaces}
+The web application will have both client and server requirements. The client device must support modern browsers (Chrome, Firefox, Safari, ect.). The server will requireme Node.js hosting with minimum specs of 4GB RAM and 100GB SSD.
+
+\subsection{Communications Interfaces}
+The application will communicate with the backend APIs over HTTPS, ensuring secure data transmission. It will support the standard HTTP methods (GET, POST) for interacting with external data sources. It will rely on REST API endpoints exposed for internal and external data consumers. Additionally, there will be OAuth2-based authentication for admin and contributor roles.
+
+\newpage
+\section{Legal and Ethical Considerations}
+\subsection{User Data}
+The application may collect minimal user data such as location data for mapping purposes or data analytics. This data will be anonymized and handled per GDPR and CCPA compliance standards. Users will be informed about data collection practices via a Privacy Policy. Consent forms and opt-out options will be included.
+
+\subsection{Data Storage and Use}
+All data fetched from external APIs (such as wildfire and drought data) will be stored temporarily in a secure cloud database (supabase). This data will be updated regularly and stored for historical analysis. No personally identifiable information (PII) will be stored by the system. Admin uploads are restricted and monitored.
+
+\subsection{Moral Dilemmas and Risk Communication}
+The project must consider the ethical implications of displaying sensitive data, particularly during wildfire seasons when affected communities may be vulnerable. The application should focus on providing valuable information to users without causing undue distress. The project should also ensure that any data sharing respects user privacy and follows the applicable legal regulations (e.g., GDPR). As the system displays sensitive information (e.g., evacuation zones, high-risk areas) during emergencies, care will be taken to:
+\begin{itemize}
+\item Clearly mark unverified vs. confirmed reports.
+\item Include disclaimers for predictive analytics.
+\item Avoid triggering content unless necessary (e.g., fire images).
+\end{itemize}
+All efforts will be made to inform, not alarm. Users are directed to official sites for critical actions.
+
+\newpage
+\section*{Glossary}
+\addcontentsline{toc}{section}{Glossary}
+\begin{longtable}{|p{1.5in}|p{4in}|}
+\hline
+\textbf{Acronym} & \textbf{Definition} \\
+\hline
+API & Application Programming Interface \\
+\hline
+UI & User Interface \\
+\hline
+JS & JavaScript \\
+\hline
+NOAA & National Oceanic and Atmospheric Administration \\
+\hline
+CAL Fire & California Department of Forestry and Fire Protection \\
+\hline
+GDPR & General Data Protection Regulation \\
+\hline
+CCPA & California Consumer Privacy Act \\
+\hline
+WCAG & Web Content Accessibility Guidelines \\
+\hline
+SRS & Software Requirements Specification \\
+\hline
+\end{longtable}
+
+\end{document}

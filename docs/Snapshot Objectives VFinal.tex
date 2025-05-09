@@ -1,0 +1,114 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\geometry{margin=1in}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\begin{document}
+
+% Cover Page
+\begin{flushright}
+\Huge \textbf{Snapshot Objectives Document} \\[2em]
+\color{blue}
+\LARGE Artificial Intelligence and Data\\
+Science for Climate Change Management\\
+with Focus on Drought and Wildfire in California\\[2em]
+\color{black}
+\large Prepared by:\\
+Huy Lam\\
+Lunar Raborn\\
+Brian Gonzalez\\
+Guadalupe Ortiz Nunez\\[1em]
+Version 1.0\\
+NASA \& LA City\\
+05/06/25
+\end{flushright}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Snapshot 1 – Project Start}
+\begin{itemize}[leftmargin=*]
+    \item Define project objective and mission
+    \item Select core technology stack (HTML/CSS, JavaScript, ArcGIS, NOAA/CAL FIRE APIs)
+    \item Create initial GitHub repository and team workflow
+    \item Set up base frontend and backend framework
+    \item Assign team roles and task delegation
+    \item Draft early versions of:
+    \begin{itemize}
+        \item Software Requirements Specification (SRS)
+        \item Software Design Document (SDD)
+        \item User Manual outline
+    \end{itemize}
+\end{itemize}
+
+\section{Snapshot 2 – Checkpoint 1}
+\begin{itemize}[leftmargin=*]
+    \item Add Feature: \textbf{Wildfire ArcGIS Map Page}
+    \item Create new tasks to develop wildfire mapping and filtering
+    \item Integrate CAL FIRE data into interactive map
+    \item Add external dependency: ArcGIS JavaScript API
+    \item Update:
+    \begin{itemize}
+        \item TestRail test plan and test cases
+        \item Design Spec with map layout and filters
+        \item SDD to reflect ArcGIS integration
+        \item SRS with new functional requirements
+        \item User Manual with map usage instructions
+        \item Team workflow and GitHub board
+    \end{itemize}
+\end{itemize}
+
+\section{Snapshot 3 – Checkpoint 2}
+\begin{itemize}[leftmargin=*]
+    \item Add Feature: \textbf{Drought Visualization Dashboard}
+    \item Add NOAA drought API data source and integrate it
+    \item Create graphs using Chart.js (new dependency)
+    \item Create new tasks for API fetch, graphing, and UI
+    \item Update:
+    \begin{itemize}
+        \item TestRail for new feature testing
+        \item Design Spec with dashboard layout
+        \item SDD with data processing flow
+        \item SRS with additional visualization features
+        \item User Manual with chart explanations
+        \item Project workflow for development and review
+    \end{itemize}
+\end{itemize}
+
+\section{Snapshot 4 – Final Delivery}
+\begin{itemize}[leftmargin=*]
+    \item Add Finishing Touches: polish layout, fix bugs, finalize documents
+    \item Add Feature: \textbf{About Page and Future Work Section}
+    \item Include team bios and references to all APIs used
+    \item Add Final Reflection in Snapshot Document
+    \item Update:
+    \begin{itemize}
+        \item TestRail – final coverage
+        \item Design Spec with final UI structure
+        \item SDD with architecture summary
+        \item SRS – add deferred and future requirements
+        \item User Manual – final walkthrough
+        \item Workflow – freeze and tag final version
+    \end{itemize}
+\end{itemize}
+
+\end{document}
