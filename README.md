@@ -1,7 +1,7 @@
 # Jira Project Link
 
 Our Jira board, used to track issues, sprint progress, and team
-collaboration, is available here: [Jira](https://cs3338-02-group-2.atlassian.net/jira/software/projects/CG/boards/6)
+collaboration, is available here: [Jira](https://cs3338-02-group-2.atlassian.net/jira/software/projects/CG/summary)
 
 # Formal Objective Breakdown
 
